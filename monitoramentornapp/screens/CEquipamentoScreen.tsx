@@ -34,7 +34,7 @@ const CEquipamentoScreen = ({ navigation }: Props) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Nova categoria</Text>
+      <Text style={styles.title}>Classe Equipamento</Text>
       <Text style={styles.label}>Nome</Text>
       <TextInput
         value={name}
@@ -46,7 +46,7 @@ const CEquipamentoScreen = ({ navigation }: Props) => {
         value={description}
         onChangeText={setDescription}
         style={[styles.input, { height: 100 }]}
-        multiline
+        multiline 
       />
       {saving
         ? <ActivityIndicator size="large" color="#4B7BE5" />
