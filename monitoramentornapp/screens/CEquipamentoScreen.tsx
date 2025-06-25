@@ -23,7 +23,7 @@ const CEquipamentoScreen = ({ navigation }: Props) => {
 
   const handleSave = async () => {
     setSaving(true);
-    const res = await fetch('http://localhost:8000/categorias/', {
+    const res = await fetch('http://localhost:8081/categorias/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, description }),
