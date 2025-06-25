@@ -14,8 +14,7 @@ type Equipamento = {
 };
 
 
-const API_URL = 'http://SEU_BACKEND_URL/Equipamento/'; // ajuste para sua API
-
+const API_URL = 'http://localhost:8081/Equipamento/'; 
 const EquipamentoScreen = () => {
   const [equipamentos, setEquipamentos] = useState<Equipamento[]>([]);
   const [name, setName] = useState('');
@@ -97,7 +96,8 @@ const EquipamentoScreen = () => {
         value={description}
         onChangeText={setDescription}
       />
-      <Button title={editingId ? "Atualizar" : "Adicionar"} onPress={handleSave} />
+      <View style={styles.input}>
+      <Button title={editingId ? "Atualizar" : "Adicionar"} onPress={handleSave} /></View>
 
       <FlatList
         data={equipamentos}
@@ -124,12 +124,14 @@ const EquipamentoScreen = () => {
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 16, backgroundColor: '#fff' },
   title: { fontSize: 22, fontWeight: 'bold', marginBottom: 16, alignSelf: 'center' },
-  input: { borderWidth: 1, borderColor: '#ccc', borderRadius: 8, padding: 10, marginBottom: 8 },
+  input: { borderWidth: 1, borderColor: '#ccc', borderRadius: 8, padding: 6, marginBottom: 6, fontSize: 14, width: '80%', alignSelf: 'flex-end', },
   item: { padding: 12, borderBottomWidth: 1, borderBottomColor: '#eee' },
   itemTitle: { fontWeight: 'bold', fontSize: 16 },
   actions: { flexDirection: 'row', marginTop: 8 },
-  edit: { color: 'blue', marginRight: 16 },
+  edit: { color: 'blue', marginRight: 16, },
   delete: { color: 'red' },
+ 
 });
+
 
 export default EquipamentoScreen;
