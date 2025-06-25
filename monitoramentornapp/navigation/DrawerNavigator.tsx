@@ -6,7 +6,7 @@ import HomeScreen from '../screens/HomeScreen';
 import CEquipamentoScreen from '../screens/CEquipamentoScreen';
 import EquipamentoScreen from '../screens/EquipamentoScreen';
 import MonitoramentoScreen from '../screens/MonitoramentoScreen';
- 
+import ClienteScreen from '../screens/ClienteScreen';
 
 
 export type DrawerParamList = {
@@ -15,6 +15,7 @@ export type DrawerParamList = {
   Equipamento: undefined;
   CreateCategory: undefined; 
   Monitoramento: undefined;
+  Cliente: undefined;
   // EditCategory: { category: CEquipamento };
   // Products: undefined;
   // Socialnetworks: undefined;  
@@ -65,6 +66,14 @@ const DrawerNavigator = () => {
         options={{
           drawerIcon: ({ color, size }) => <Ionicons name="settings-outline" size={size} color={color} />,
           title: 'Monitoramento',
+        }}
+      />
+      <Drawer.Screen
+        name="Cliente"
+        component={ClienteScreen}
+        options={{
+          drawerIcon: ({ color, size }) => <Ionicons name="settings-outline" size={size} color={color} />,
+          title: 'Clientes',
         }}
       />
     </Drawer.Navigator>  
