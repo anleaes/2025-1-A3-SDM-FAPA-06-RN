@@ -2,21 +2,20 @@ import { Ionicons } from '@expo/vector-icons';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import React from 'react';
 import CustomDrawerContent from '../components/CustomDrawerContent';
-import CEquipamentoScreen from '../screens/CEquipamentoScreen';
-import CreateCategoryScreen from '../screens/CreateCategoryScreen';
-import EditCategoryScreen from '../screens/EditCategoryScreen';
 import HomeScreen from '../screens/HomeScreen';
-import ProductsScreen from '../screens/ProductsScreen';
-import SocialnetworksScreen from '../screens/SocialnetworksScreen';
+import CEquipamentoScreen from '../screens/CEquipamentoScreen';
+import EquipamentoScreen from '../screens/EquipamentoScreen';
+ 
 
 
 export type DrawerParamList = {
   Home: undefined;
   CEquipamento: undefined;
+  Equipamento: undefined;
   CreateCategory: undefined; 
- // EditCategory: { category: CEquipamento };
-  Products: undefined;
-  Socialnetworks: undefined;  
+  // EditCategory: { category: CEquipamento };
+  // Products: undefined;
+  // Socialnetworks: undefined;  
 };
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
@@ -47,35 +46,17 @@ const DrawerNavigator = () => {
         component={CEquipamentoScreen}
         options={{
           drawerIcon: ({ color, size }) => <Ionicons name="settings-outline" size={size} color={color} />,
-          title: 'Categorias',
+          title: 'Classes de Equipamento',
         }}
       />
       <Drawer.Screen
-        name="CreateCategory"
-        component={CreateCategoryScreen}
-        options={{ drawerItemStyle: { display: 'none' }, title: 'Nova categoria' }}
-      />
-      <Drawer.Screen
-        name="EditCategory"
-        component={EditCategoryScreen}
-        options={{ drawerItemStyle: { display: 'none' }, title: 'Editar categoria' }}
-      />
-      <Drawer.Screen
-        name="Products"
-        component={ProductsScreen}
+        name="Equipamento"
+        component={EquipamentoScreen}
         options={{
-          drawerIcon: ({ color, size }) => <Ionicons name="cart" size={size} color={color} />,
-          title: 'Produtos',
+          drawerIcon: ({ color, size }) => <Ionicons name="settings-outline" size={size} color={color} />,
+          title: 'Equipamento',
         }}
       />
-      <Drawer.Screen
-        name="Socialnetworks"
-        component={SocialnetworksScreen}
-        options={{
-          drawerIcon: ({ color, size }) => <Ionicons name="logo-facebook" size={size} color={color} />,
-          title: 'Redes Socias',
-        }}
-      />      
     </Drawer.Navigator>  
   );
 };
