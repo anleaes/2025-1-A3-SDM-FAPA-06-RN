@@ -52,6 +52,7 @@ const CEquipamentoScreen = ({ navigation }: Props) => {
         ? <ActivityIndicator size="large" color="#4B7BE5" />
         : <Button title="Salvar" onPress={handleSave} color="#4B7BE5" />
       }
+      
       <Button title="Voltar" onPress={() => navigation.navigate('CEquipamento')} />
     </View>
   );
@@ -78,6 +79,8 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderRadius: 8,
     padding: 10,
+    width: '80%', 
+    alignSelf: 'flex-end',
   },
 });
 

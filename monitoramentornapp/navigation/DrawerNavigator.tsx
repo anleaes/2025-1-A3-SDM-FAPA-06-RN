@@ -5,6 +5,7 @@ import CustomDrawerContent from '../components/CustomDrawerContent';
 import HomeScreen from '../screens/HomeScreen';
 import CEquipamentoScreen from '../screens/CEquipamentoScreen';
 import EquipamentoScreen from '../screens/EquipamentoScreen';
+import MonitoramentoScreen from '../screens/MonitoramentoScreen';
  
 
 
@@ -13,6 +14,7 @@ export type DrawerParamList = {
   CEquipamento: undefined;
   Equipamento: undefined;
   CreateCategory: undefined; 
+  Monitoramento: undefined;
   // EditCategory: { category: CEquipamento };
   // Products: undefined;
   // Socialnetworks: undefined;  
@@ -55,6 +57,14 @@ const DrawerNavigator = () => {
         options={{
           drawerIcon: ({ color, size }) => <Ionicons name="settings-outline" size={size} color={color} />,
           title: 'Equipamento',
+        }}
+      />
+      <Drawer.Screen
+        name="Monitoramento"
+        component={MonitoramentoScreen}
+        options={{
+          drawerIcon: ({ color, size }) => <Ionicons name="settings-outline" size={size} color={color} />,
+          title: 'Monitoramento',
         }}
       />
     </Drawer.Navigator>  
